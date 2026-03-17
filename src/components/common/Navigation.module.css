@@ -1,0 +1,136 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background-color: rgba(12, 15, 26, 0.85);
+  border-bottom: 1px solid var(--color-ink-border-subtle);
+}
+
+.navContainer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .navContainer {
+    padding: 0 24px;
+  }
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease;
+}
+
+.logoLink:hover .logoIcon {
+  transform: scale(1.05);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .navActions {
+    gap: 24px;
+  }
+}
+
+.navLink {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px;
+  color: var(--color-cream-dim);
+  opacity: 0.8;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+@media (min-width: 640px) {
+  .navLink {
+    display: block;
+  }
+}
+
+.authGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnPrimary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  background-color: var(--color-amber);
+  color: var(--color-ink);
+}
+
+.btnPrimary:hover {
+  filter: brightness(1.1);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 8px;
+  border-left: 1px solid var(--color-ink-border);
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-ink-border);
+}
+
+.userName {
+  font-size: 14px;
+  color: var(--color-cream-dim);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .userName {
+    display: inline;
+  }
+}
+
+.btnLogout {
+  font-size: 12px;
+  color: var(--color-rose);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.btnLogout:hover {
+  opacity: 1;
+}

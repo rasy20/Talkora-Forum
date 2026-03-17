@@ -1,0 +1,125 @@
+.article {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 24px;
+  background-color: var(--color-ink-light);
+  border: 1px solid var(--color-ink-border-subtle);
+  transition: all 300ms ease;
+}
+
+@media (min-width: 640px) {
+  .article {
+    padding: 32px;
+  }
+}
+
+.article:hover {
+  transform: translateY(-2px);
+  border-color: rgba(196, 139, 42, 0.5);
+  box-shadow: 0 8px 40px rgba(232, 168, 56, 0.06);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.category {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(232, 168, 56, 0.1);
+  color: var(--color-amber);
+  border: 1px solid rgba(232, 168, 56, 0.2);
+  font-family: var(--font-display);
+}
+
+.date {
+  font-size: 12px;
+  color: var(--color-cream-muted);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  font-family: var(--font-display);
+  color: var(--color-cream);
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+.bodyPreview {
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.625;
+  color: var(--color-cream-dim);
+}
+
+@media (min-width: 640px) {
+  .bodyPreview {
+    font-size: 16px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-ink-border-subtle);
+}
+
+@media (min-width: 640px) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-ink-border);
+}
+
+.authorName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-cream);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.commentCount {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+  color: var(--color-cream-muted);
+}
