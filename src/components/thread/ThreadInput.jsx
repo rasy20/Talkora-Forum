@@ -29,9 +29,7 @@ function ThreadInput({ onCreateThread }) {
       </div>
       <div>
         <label htmlFor="thread-category" className={styles.label}>
-          Kategori
-          {' '}
-          <span className={styles.hint}>(opsional)</span>
+          Kategori <span className={styles.hint}>(opsional)</span>
         </label>
         <input
           id="thread-category"

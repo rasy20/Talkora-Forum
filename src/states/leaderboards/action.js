@@ -11,7 +11,8 @@ function receiveLeaderboards(leaderboards) {
 
 function asyncReceiveLeaderboards() {
   return async (dispatch) => {
-    const { setIsLoading, unsetIsLoading } = await import('../isLoading/action.js');
+    const { setIsLoading, unsetIsLoading } =
+      await import('../isLoading/action.js');
     dispatch(setIsLoading());
     try {
       const { getLeaderboards } = await import('../../utils/api.js');
@@ -25,8 +26,4 @@ function asyncReceiveLeaderboards() {
   };
 }
 
-export {
-  ActionType,
-  receiveLeaderboards,
-  asyncReceiveLeaderboards,
-};
+export { ActionType, receiveLeaderboards, asyncReceiveLeaderboards };

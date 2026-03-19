@@ -18,7 +18,9 @@ function HomePage() {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
 
-  const categories = [...new Set(threads.map((t) => t.category).filter(Boolean))];
+  const categories = [
+    ...new Set(threads.map((t) => t.category).filter(Boolean)),
+  ];
 
   const filteredThreads = selectedCategory
     ? threads.filter((t) => t.category === selectedCategory)
@@ -35,12 +37,8 @@ function HomePage() {
   return (
     <div>
       <header className={`animate-fade-up ${styles.header}`}>
-        <p className={styles.eyebrow}>
-          Komunitas
-        </p>
-        <h1 className={styles.title}>
-          Diskusi Terbaru
-        </h1>
+        <p className={styles.eyebrow}>Komunitas</p>
+        <h1 className={styles.title}>Diskusi Terbaru</h1>
         <p className={styles.subtitle}>
           Temukan percakapan menarik dan bergabung dengan komunitas.
         </p>
@@ -48,9 +46,7 @@ function HomePage() {
 
       {categories.length > 0 && (
         <div className={`animate-fade-up ${styles.filterSection}`}>
-          <p className={styles.filterLabel}>
-            Filter Kategori
-          </p>
+          <p className={styles.filterLabel}>Filter Kategori</p>
           <CategoryFilter
             categories={categories}
             selected={selectedCategory}

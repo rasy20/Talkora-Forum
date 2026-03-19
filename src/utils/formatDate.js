@@ -10,7 +10,11 @@ function formatDate(isoDate) {
   if (minutes < 60) return `${minutes} menit lalu`;
   if (hours < 24) return `${hours} jam lalu`;
   if (days < 30) return `${days} hari lalu`;
-  return date.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 }
 
 export { formatDate };

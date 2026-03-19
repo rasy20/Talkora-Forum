@@ -6,9 +6,7 @@ import React from 'react';
  * 2. Memanggil onRegister callback dengan data form saat di-submit
  */
 
-import {
-  describe, it, expect, vi,
-} from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import RegisterInput from '../../src/components/auth/RegisterInput';
@@ -20,7 +18,9 @@ describe('RegisterInput component', () => {
     expect(screen.getByLabelText('Nama')).toBeInTheDocument();
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Buat Akun' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Buat Akun' }),
+    ).toBeInTheDocument();
   });
 
   it('should call onRegister with name, email, and password when form is submitted', async () => {

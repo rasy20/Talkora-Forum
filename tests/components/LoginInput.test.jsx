@@ -6,9 +6,7 @@ import React from 'react';
  * 2. Memanggil onLogin callback dengan data email dan password saat form di-submit
  */
 
-import {
-  describe, it, expect, vi,
-} from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import LoginInput from '../../src/components/auth/LoginInput';

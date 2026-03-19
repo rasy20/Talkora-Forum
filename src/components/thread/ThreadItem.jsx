@@ -3,9 +3,7 @@ import VoteButton from '../common/VoteButton.jsx';
 import { formatDate } from '../../utils/formatDate.js';
 import styles from './ThreadItem.module.css';
 
-function ThreadItem({
-  thread, user, authUser, onUpVote, onDownVote,
-}) {
+function ThreadItem({ thread, user, authUser, onUpVote, onDownVote }) {
   const navigate = useNavigate();
 
   const isUpVoted = authUser ? thread.upVotesBy.includes(authUser.id) : false;

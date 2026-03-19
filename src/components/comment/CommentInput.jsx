@@ -14,9 +14,7 @@ function CommentInput({ onComment }) {
 
   return (
     <form onSubmit={handleSubmit} className={`animate-fade-up ${styles.form}`}>
-      <h2 className={styles.title}>
-        Beri Komentar
-      </h2>
+      <h2 className={styles.title}>Beri Komentar</h2>
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}

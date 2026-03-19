@@ -27,10 +27,16 @@ describe('threadsReducer', () => {
     const initialState = [];
     const threads = [
       {
-        id: 'thread-1', title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+        id: 'thread-1',
+        title: 'Thread 1',
+        upVotesBy: [],
+        downVotesBy: [],
       },
       {
-        id: 'thread-2', title: 'Thread 2', upVotesBy: [], downVotesBy: [],
+        id: 'thread-2',
+        title: 'Thread 2',
+        upVotesBy: [],
+        downVotesBy: [],
       },
     ];
     const action = {
@@ -46,11 +52,17 @@ describe('threadsReducer', () => {
   it('should prepend new thread when given CREATE_THREAD action', () => {
     const initialState = [
       {
-        id: 'thread-1', title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+        id: 'thread-1',
+        title: 'Thread 1',
+        upVotesBy: [],
+        downVotesBy: [],
       },
     ];
     const newThread = {
-      id: 'thread-2', title: 'Thread 2', upVotesBy: [], downVotesBy: [],
+      id: 'thread-2',
+      title: 'Thread 2',
+      upVotesBy: [],
+      downVotesBy: [],
     };
     const action = {
       type: ActionType.CREATE_THREAD,
@@ -66,7 +78,10 @@ describe('threadsReducer', () => {
   it('should add userId to upVotesBy when given TOGGLE_VOTE_THREAD with voteType 1', () => {
     const initialState = [
       {
-        id: 'thread-1', title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+        id: 'thread-1',
+        title: 'Thread 1',
+        upVotesBy: [],
+        downVotesBy: [],
       },
     ];
     const action = {
@@ -83,7 +98,10 @@ describe('threadsReducer', () => {
   it('should add userId to downVotesBy when given TOGGLE_VOTE_THREAD with voteType -1', () => {
     const initialState = [
       {
-        id: 'thread-1', title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+        id: 'thread-1',
+        title: 'Thread 1',
+        upVotesBy: [],
+        downVotesBy: [],
       },
     ];
     const action = {
@@ -100,7 +118,10 @@ describe('threadsReducer', () => {
   it('should remove userId from both arrays when given TOGGLE_VOTE_THREAD with voteType 0', () => {
     const initialState = [
       {
-        id: 'thread-1', title: 'Thread 1', upVotesBy: ['user-1'], downVotesBy: [],
+        id: 'thread-1',
+        title: 'Thread 1',
+        upVotesBy: ['user-1'],
+        downVotesBy: [],
       },
     ];
     const action = {

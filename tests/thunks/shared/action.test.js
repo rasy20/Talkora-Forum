@@ -5,9 +5,7 @@
  * 2. Dispatch alert saat data fetching gagal
  */
 
-import {
-  describe, it, expect, vi, beforeEach, afterEach,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { asyncPopulateUsersAndThreads } from '../../../src/states/shared/action.js';
 
 const fakeUsers = [
@@ -15,7 +13,11 @@ const fakeUsers = [
 ];
 const fakeThreads = [
   {
-    id: 'thread-1', title: 'Thread 1', body: 'Body', upVotesBy: [], downVotesBy: [],
+    id: 'thread-1',
+    title: 'Thread 1',
+    body: 'Body',
+    upVotesBy: [],
+    downVotesBy: [],
   },
 ];
 
@@ -53,14 +55,18 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
 
     // Assert
     expect(dispatch).toHaveBeenCalledWith({ type: 'SET_IS_LOADING' });
-    expect(dispatch).toHaveBeenCalledWith(expect.objectContaining({
-      type: 'RECEIVE_USERS',
-      payload: { users: fakeUsers },
-    }));
-    expect(dispatch).toHaveBeenCalledWith(expect.objectContaining({
-      type: 'RECEIVE_THREADS',
-      payload: { threads: fakeThreads },
-    }));
+    expect(dispatch).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'RECEIVE_USERS',
+        payload: { users: fakeUsers },
+      }),
+    );
+    expect(dispatch).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'RECEIVE_THREADS',
+        payload: { threads: fakeThreads },
+      }),
+    );
     expect(dispatch).toHaveBeenCalledWith({ type: 'UNSET_IS_LOADING' });
   });
 

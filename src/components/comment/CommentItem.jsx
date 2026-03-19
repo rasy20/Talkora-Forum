@@ -2,9 +2,7 @@ import VoteButton from '../common/VoteButton.jsx';
 import { formatDate } from '../../utils/formatDate.js';
 import styles from './CommentItem.module.css';
 
-function CommentItem({
-  comment, authUser, onUpVote, onDownVote,
-}) {
+function CommentItem({ comment, authUser, onUpVote, onDownVote }) {
   const isUpVoted = authUser ? comment.upVotesBy.includes(authUser.id) : false;
   const isDownVoted = authUser
     ? comment.downVotesBy.includes(authUser.id)

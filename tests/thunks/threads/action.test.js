@@ -6,9 +6,7 @@
  * 3. Menampilkan alert dan tidak dispatch jika user belum login
  */
 
-import {
-  describe, it, expect, vi, beforeEach, afterEach,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { asyncToggleVoteThread } from '../../../src/states/threads/action.js';
 
 vi.mock('../../../src/utils/api.js', () => ({
@@ -33,12 +31,17 @@ describe('asyncToggleVoteThread thunk', () => {
     const dispatch = vi.fn();
     const getState = () => ({ authUser: { id: 'user-1' } });
 
-    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(dispatch, getState);
+    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(
+      dispatch,
+      getState,
+    );
 
-    expect(dispatch).toHaveBeenCalledWith(expect.objectContaining({
-      type: 'TOGGLE_VOTE_THREAD',
-      payload: { threadId: 'thread-1', userId: 'user-1', voteType: 1 },
-    }));
+    expect(dispatch).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'TOGGLE_VOTE_THREAD',
+        payload: { threadId: 'thread-1', userId: 'user-1', voteType: 1 },
+      }),
+    );
     expect(api.upVoteThread).toHaveBeenCalledWith('thread-1');
   });
 
@@ -50,16 +53,25 @@ describe('asyncToggleVoteThread thunk', () => {
     const dispatch = vi.fn();
     const getState = () => ({ authUser: { id: 'user-1' } });
 
-    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(dispatch, getState);
+    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(
+      dispatch,
+      getState,
+    );
 
     // First dispatch: optimistic update
-    expect(dispatch).toHaveBeenNthCalledWith(1, expect.objectContaining({
-      payload: { threadId: 'thread-1', userId: 'user-1', voteType: 1 },
-    }));
+    expect(dispatch).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        payload: { threadId: 'thread-1', userId: 'user-1', voteType: 1 },
+      }),
+    );
     // Second dispatch: revert
-    expect(dispatch).toHaveBeenNthCalledWith(2, expect.objectContaining({
-      payload: { threadId: 'thread-1', userId: 'user-1', voteType: 0 },
-    }));
+    expect(dispatch).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        payload: { threadId: 'thread-1', userId: 'user-1', voteType: 0 },
+      }),
+    );
     expect(window.alert).toHaveBeenCalledWith('API error');
   });
 
@@ -68,7 +80,10 @@ describe('asyncToggleVoteThread thunk', () => {
     const dispatch = vi.fn();
     const getState = () => ({ authUser: null });
 
-    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(dispatch, getState);
+    await asyncToggleVoteThread({ threadId: 'thread-1', voteType: 1 })(
+      dispatch,
+      getState,
+    );
 
     expect(window.alert).toHaveBeenCalledWith('Anda harus login untuk vote!');
     expect(dispatch).not.toHaveBeenCalled();

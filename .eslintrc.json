@@ -7,7 +7,8 @@
   "extends": [
     "airbnb",
     "airbnb/hooks",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {

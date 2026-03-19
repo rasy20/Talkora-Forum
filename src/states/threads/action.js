@@ -27,7 +27,8 @@ function toggleVoteThread({ threadId, userId, voteType }) {
 
 function asyncCreateThread({ title, body, category }) {
   return async (dispatch) => {
-    const { setIsLoading, unsetIsLoading } = await import('../isLoading/action.js');
+    const { setIsLoading, unsetIsLoading } =
+      await import('../isLoading/action.js');
     dispatch(setIsLoading());
     try {
       const api = await import('../../utils/api.js');
@@ -63,7 +64,9 @@ function asyncToggleVoteThread({ threadId, voteType }) {
       }
     } catch (error) {
       alert(error.message);
-      dispatch(toggleVoteThread({ threadId, userId: authUser.id, voteType: 0 }));
+      dispatch(
+        toggleVoteThread({ threadId, userId: authUser.id, voteType: 0 }),
+      );
     }
   };
 }

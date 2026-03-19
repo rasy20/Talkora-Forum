@@ -20,8 +20,12 @@ function Navigation() {
         </Link>
 
         <div className={styles.navActions}>
-          <Link to="/" className={styles.navLink}>Threads</Link>
-          <Link to="/leaderboards" className={styles.navLink}>Leaderboard</Link>
+          <Link to="/" className={styles.navLink}>
+            Threads
+          </Link>
+          <Link to="/leaderboards" className={styles.navLink}>
+            Leaderboard
+          </Link>
 
           {authUser ? (
             <div className={styles.authGroup}>

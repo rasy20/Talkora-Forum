@@ -16,12 +16,8 @@ function CreateThreadPage() {
   return (
     <div className={`animate-fade-up ${styles.container}`}>
       <div className={styles.card}>
-        <p className={styles.eyebrow}>
-          Thread Baru
-        </p>
-        <h1 className={styles.title}>
-          Buat Diskusi Baru
-        </h1>
+        <p className={styles.eyebrow}>Thread Baru</p>
+        <h1 className={styles.title}>Buat Diskusi Baru</h1>
         <ThreadInput onCreateThread={onCreateThread} />
       </div>
     </div>
