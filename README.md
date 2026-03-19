@@ -28,7 +28,7 @@ Forum discussion application for students to ask questions and get answers from 
 git clone https://github.com/febss20/Talkora-Forum.git
 
 # Navigate to the project directory
-cd forum-app
+cd Talkora-Forum
 
 # Install dependencies
 npm install

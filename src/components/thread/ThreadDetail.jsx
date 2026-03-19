@@ -2,9 +2,7 @@ import VoteButton from '../common/VoteButton.jsx';
 import { formatDate } from '../../utils/formatDate.js';
 import styles from './ThreadDetail.module.css';
 
-function ThreadDetail({
-  thread, authUser, onUpVote, onDownVote,
-}) {
+function ThreadDetail({ thread, authUser, onUpVote, onDownVote }) {
   const isUpVoted = authUser ? thread.upVotesBy.includes(authUser.id) : false;
   const isDownVoted = authUser
     ? thread.downVotesBy.includes(authUser.id)

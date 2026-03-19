@@ -30,7 +30,9 @@ describe('Login flow', () => {
     }).as('loginRequest');
 
     // Click submit
-    cy.get('button').contains(/^Masuk$/).click();
+    cy.get('button')
+      .contains(/^Masuk$/)
+      .click();
 
     // Verify alert is shown
     cy.wait('@loginRequest');
@@ -79,9 +81,11 @@ describe('Login flow', () => {
     // Fill credentials
     cy.get('input[type="email"]').type('valid@user.com');
     cy.get('input[type="password"]').type('validpassword');
-    
+
     // Click submit
-    cy.get('button').contains(/^Masuk$/).click();
+    cy.get('button')
+      .contains(/^Masuk$/)
+      .click();
 
     // Verify redirect to homepage
     cy.wait('@loginRequest');

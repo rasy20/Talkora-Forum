@@ -8,9 +8,7 @@ import React from 'react';
  * 4. Menerapkan class yang sesuai saat isVoted true
  */
 
-import {
-  describe, it, expect, vi,
-} from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import VoteButton from '../../src/components/common/VoteButton';
@@ -36,7 +34,9 @@ describe('VoteButton component', () => {
 
   it('should call onVote when button is clicked', async () => {
     const mockOnVote = vi.fn();
-    render(<VoteButton type="up" count={0} isVoted={false} onVote={mockOnVote} />);
+    render(
+      <VoteButton type="up" count={0} isVoted={false} onVote={mockOnVote} />,
+    );
 
     const button = screen.getByRole('button');
     await userEvent.click(button);

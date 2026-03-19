@@ -42,7 +42,8 @@ function toggleVoteComment({ commentId, userId, voteType }) {
 
 function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
-    const { setIsLoading, unsetIsLoading } = await import('../isLoading/action.js');
+    const { setIsLoading, unsetIsLoading } =
+      await import('../isLoading/action.js');
     dispatch(setIsLoading());
     dispatch(clearThreadDetail());
     try {
@@ -59,7 +60,8 @@ function asyncReceiveThreadDetail(threadId) {
 
 function asyncCreateComment({ threadId, content }) {
   return async (dispatch) => {
-    const { setIsLoading, unsetIsLoading } = await import('../isLoading/action.js');
+    const { setIsLoading, unsetIsLoading } =
+      await import('../isLoading/action.js');
     dispatch(setIsLoading());
     try {
       const api = await import('../../utils/api.js');
@@ -122,7 +124,9 @@ function asyncToggleVoteComment({ threadId, commentId, voteType }) {
       }
     } catch (error) {
       alert(error.message);
-      dispatch(toggleVoteComment({ commentId, userId: authUser.id, voteType: 0 }));
+      dispatch(
+        toggleVoteComment({ commentId, userId: authUser.id, voteType: 0 }),
+      );
     }
   };
 }

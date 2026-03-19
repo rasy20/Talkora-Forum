@@ -12,6 +12,11 @@
 .loadingBarFill {
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, var(--color-amber), var(--color-teal), var(--color-amber));
+  background: linear-gradient(
+    90deg,
+    var(--color-amber),
+    var(--color-teal),
+    var(--color-amber)
+  );
   animation: loading-slide 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }

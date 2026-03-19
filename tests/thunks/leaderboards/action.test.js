@@ -5,9 +5,7 @@
  * 2. Alert dan tetap dispatch unsetIsLoading saat gagal
  */
 
-import {
-  describe, it, expect, vi, beforeEach, afterEach,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { asyncReceiveLeaderboards } from '../../../src/states/leaderboards/action.js';
 
 const fakeLeaderboards = [
@@ -41,10 +39,12 @@ describe('asyncReceiveLeaderboards thunk', () => {
     await asyncReceiveLeaderboards()(dispatch);
 
     expect(dispatch).toHaveBeenCalledWith({ type: 'SET_IS_LOADING' });
-    expect(dispatch).toHaveBeenCalledWith(expect.objectContaining({
-      type: 'RECEIVE_LEADERBOARDS',
-      payload: { leaderboards: fakeLeaderboards },
-    }));
+    expect(dispatch).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'RECEIVE_LEADERBOARDS',
+        payload: { leaderboards: fakeLeaderboards },
+      }),
+    );
     expect(dispatch).toHaveBeenCalledWith({ type: 'UNSET_IS_LOADING' });
   });
 

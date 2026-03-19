@@ -2,7 +2,10 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  asyncReceiveThreadDetail, asyncCreateComment, asyncToggleVoteThreadDetail, asyncToggleVoteComment,
+  asyncReceiveThreadDetail,
+  asyncCreateComment,
+  asyncToggleVoteThreadDetail,
+  asyncToggleVoteComment,
 } from '../../states/threadDetail/action.js';
 import ThreadDetail from '../../components/thread/ThreadDetail.jsx';
 import CommentList from '../../components/comment/CommentList.jsx';
@@ -59,8 +62,9 @@ function DetailPage() {
         <CommentInput onComment={handleComment} />
       ) : (
         <p className={styles.loginPrompt}>
-          <a href="/login" className={styles.loginLink}>Login</a>
-          {' '}
+          <a href="/login" className={styles.loginLink}>
+            Login
+          </a>{' '}
           untuk memberikan komentar.
         </p>
       )}

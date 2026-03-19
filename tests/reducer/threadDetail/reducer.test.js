@@ -105,7 +105,10 @@ describe('threadDetailReducer', () => {
       downVotesBy: [],
       comments: [
         {
-          id: 'comment-1', content: 'test', upVotesBy: [], downVotesBy: [],
+          id: 'comment-1',
+          content: 'test',
+          upVotesBy: [],
+          downVotesBy: [],
         },
       ],
     };

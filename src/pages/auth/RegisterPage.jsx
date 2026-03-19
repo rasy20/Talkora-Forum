@@ -21,12 +21,13 @@ function RegisterPage() {
         <div className={styles.card}>
           <div className={styles.header}>
             <h1 className={styles.title}>Buat Akun Baru</h1>
-            <p className={styles.subtitle}>Bergabung dengan komunitas Talkora</p>
+            <p className={styles.subtitle}>
+              Bergabung dengan komunitas Talkora
+            </p>
           </div>
           <RegisterInput onRegister={onRegister} />
           <p className={styles.footer}>
-            Sudah punya akun?
-            {' '}
+            Sudah punya akun?{' '}
             <Link to="/login" className={styles.link}>
               Masuk di sini
             </Link>

@@ -19,12 +19,13 @@ function LoginPage() {
         <div className={styles.card}>
           <div className={styles.header}>
             <h1 className={styles.title}>Selamat Datang</h1>
-            <p className={styles.subtitle}>Masuk untuk melanjutkan ke Talkora</p>
+            <p className={styles.subtitle}>
+              Masuk untuk melanjutkan ke Talkora
+            </p>
           </div>
           <LoginInput onLogin={onLogin} />
           <p className={styles.footer}>
-            Belum punya akun?
-            {' '}
+            Belum punya akun?{' '}
             <Link to="/register" className={styles.link}>
               Daftar di sini
             </Link>

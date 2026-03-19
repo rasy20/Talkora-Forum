@@ -5,9 +5,7 @@
  * 2. Menampilkan alert dan tidak dispatch setAuthUser jika login gagal
  */
 
-import {
-  describe, it, expect, vi, beforeEach, afterEach,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { asyncSetAuthUser } from '../../../src/states/authUser/action.js';
 
 vi.mock('../../../src/utils/api.js', () => ({
@@ -27,7 +25,11 @@ describe('asyncSetAuthUser thunk', () => {
 
   it('should dispatch setAuthUser when login succeeds', async () => {
     const fakeToken = 'fake-token-123';
-    const fakeUser = { id: 'user-1', name: 'febss rasy', email: 'febss@example.com' };
+    const fakeUser = {
+      id: 'user-1',
+      name: 'febss rasy',
+      email: 'febss@example.com',
+    };
 
     const api = await import('../../../src/utils/api.js');
     api.login.mockResolvedValue(fakeToken);
@@ -35,14 +37,22 @@ describe('asyncSetAuthUser thunk', () => {
 
     const dispatch = vi.fn();
 
-    await asyncSetAuthUser({ email: 'febss@example.com', password: 'password' })(dispatch);
+    await asyncSetAuthUser({
+      email: 'febss@example.com',
+      password: 'password',
+    })(dispatch);
 
-    expect(api.login).toHaveBeenCalledWith({ email: 'febss@example.com', password: 'password' });
+    expect(api.login).toHaveBeenCalledWith({
+      email: 'febss@example.com',
+      password: 'password',
+    });
     expect(api.putAccessToken).toHaveBeenCalledWith(fakeToken);
-    expect(dispatch).toHaveBeenCalledWith(expect.objectContaining({
-      type: 'SET_AUTH_USER',
-      payload: { authUser: fakeUser },
-    }));
+    expect(dispatch).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'SET_AUTH_USER',
+        payload: { authUser: fakeUser },
+      }),
+    );
   });
 
   it('should alert and not dispatch setAuthUser when login fails', async () => {
@@ -52,11 +62,15 @@ describe('asyncSetAuthUser thunk', () => {
 
     const dispatch = vi.fn();
 
-    await asyncSetAuthUser({ email: 'wrong@email.com', password: 'wrong' })(dispatch);
+    await asyncSetAuthUser({ email: 'wrong@email.com', password: 'wrong' })(
+      dispatch,
+    );
 
     expect(window.alert).toHaveBeenCalledWith('Email or password is wrong');
-    expect(dispatch).not.toHaveBeenCalledWith(expect.objectContaining({
-      type: 'SET_AUTH_USER',
-    }));
+    expect(dispatch).not.toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'SET_AUTH_USER',
+      }),
+    );
   });
 });

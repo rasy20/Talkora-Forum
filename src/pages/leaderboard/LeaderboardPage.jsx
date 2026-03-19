@@ -15,12 +15,8 @@ function LeaderboardPage() {
   return (
     <div>
       <header className={`animate-fade-up ${styles.header}`}>
-        <p className={styles.eyebrow}>
-          Peringkat
-        </p>
-        <h1 className={styles.title}>
-          Leaderboard
-        </h1>
+        <p className={styles.eyebrow}>Peringkat</p>
+        <h1 className={styles.title}>Leaderboard</h1>
         <p className={styles.subtitle}>
           Pengguna dengan kontribusi tertinggi di komunitas.
         </p>

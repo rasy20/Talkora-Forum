@@ -7,9 +7,7 @@ import React from 'react';
  * 3. Memanggil onUpVote saat tombol upvote diklik
  */
 
-import {
-  describe, it, expect, vi,
-} from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';

@@ -9,7 +9,4 @@ function receiveUsers(users) {
   };
 }
 
-export {
-  ActionType,
-  receiveUsers,
-};
+export { ActionType, receiveUsers };

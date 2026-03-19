@@ -1,9 +1,7 @@
 import ThreadItem from './ThreadItem.jsx';
 import styles from './ThreadList.module.css';
 
-function ThreadList({
-  threads, users, authUser, onUpVote, onDownVote,
-}) {
+function ThreadList({ threads, users, authUser, onUpVote, onDownVote }) {
   const userMap = {};
   users.forEach((user) => {
     userMap[user.id] = user;

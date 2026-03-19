@@ -15,8 +15,4 @@ function unsetIsLoading() {
   };
 }
 
-export {
-  ActionType,
-  setIsLoading,
-  unsetIsLoading,
-};
+export { ActionType, setIsLoading, unsetIsLoading };
